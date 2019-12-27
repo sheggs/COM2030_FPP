@@ -10,11 +10,23 @@
 #define DYNAMICARRAY_H_
 
 class DynamicArray {
+private:
+	int size;
+	int currentElementSize;
+	double *pArray;
+	bool isDouble;
+	bool isFirstElementEmpty;
 public:
-	DynamicArray();
+
+	DynamicArray(int size);
+	DynamicArray(DynamicArray &p);
 	virtual ~DynamicArray();
-	void addMember(int newNumber);
-	std::string toString();
+	void addElement(double newNumber);
+	int getSize();
+	double* getArray();
+	bool getIsFirstElementEmpty();
+	bool getIsDouble();
+	void toString();
 
 };
 
