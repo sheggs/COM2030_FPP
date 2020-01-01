@@ -12,12 +12,13 @@
 class DynamicArray {
 private:
 	int size;
+	int currentSize;
 	int currentElementSize;
-	double *pArray;
+	double *doubleArray;
+	int* intArray;
 	bool isDouble;
 	bool isFirstElementEmpty;
 public:
-
 	DynamicArray(int size);
 	DynamicArray(DynamicArray &p);
 	virtual ~DynamicArray();
@@ -26,7 +27,9 @@ public:
 	double* getArray();
 	bool getIsFirstElementEmpty();
 	bool getIsDouble();
+	int getTotalElements();
 	void toString();
+	double operator[] (unsigned i);
 
 };
 
