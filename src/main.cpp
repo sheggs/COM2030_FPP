@@ -18,7 +18,7 @@ std::string isEqual(double a, double b){
 
 int main()
 {
-
+	std::cout << "Integer Section" << std::endl;
 	/// Q1.3.a
 	int size = 5;
 	int* test = new int[size];
@@ -31,25 +31,39 @@ int main()
 		dynArray.addElement(test[i]);
 	}
 
+	std::cout << "toString" << std::endl;
 
 	dynArray.toString();
+
+	std::cout << "Testing:" <<std::endl;
 
 	for(int i = 0 ; i<size;i++){
 		int arrP = size - 1;
 		cout << "Position " << (i+1) <<" Element should be: " << test[i] << " | TEST STATUS: " << isEqual(test[i], dynArray[size - i - 1]) << std::endl;
 	}
 
-//	auto b = 2.9;
-//	auto c = true;
-//	auto d = 'c';
-//	auto e = "asdasd";
-//	cout << typeid(b).name() << endl;
-//	cout << typeid(c).name() << endl;
-//	cout << typeid(d).name() << endl;
-//	cout << typeid(e).name() << endl;
+	// Q1.3.c
+	std::cout << "Double Section" << std::endl;
 
+	DynamicArray doubleArray(size);
+	double* doubleTest = new double[size];
+	for(int i = 0; i<size;i++){
+		// Generating a random number and dividing it by a constant
+		doubleTest[i] = (float) rand()/RAND_MAX;
+	}
+	for(int i = 0; i<size;i++){
+		doubleArray.addElement(doubleTest[i]);
+	}
+	std::cout << "toString" << std::endl;
 
-
+	doubleArray.toString();
+//
+	std::cout << "Testing:" <<std::endl;
+	for(int i = 0 ; i<size;i++){
+		int arrP = size - 1;
+		cout << "Position " << (i+1) <<" Element should be: " << doubleTest[i] << " | TEST STATUS: " << isEqual(doubleTest[i], doubleArray[size - i - 1]) << std::endl;
+	}
+	std::cout << "END";
 }
 
 

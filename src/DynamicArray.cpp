@@ -43,7 +43,7 @@ void DynamicArray::toString(){
 			printf("%i \n",this->intArray[i]);
 		}
 		else{
-			printf("%.0f \n",this->intArray[i]);
+			printf("%.2f \n",this->doubleArray[i]);
 		}
 	}
 
