@@ -4,6 +4,8 @@
  *  Created on: 26 Dec 2019
  *      Author: Mahdi PC
  */
+	// Add deconstructor
+	// Add deconstructor
 
 #include "DynamicArray.h"
 #include <typeinfo>
@@ -26,7 +28,8 @@ DynamicArray::DynamicArray(DynamicArray &p){
 }
 
 DynamicArray::~DynamicArray() {
-	// DELETE THE ARRAY
+	delete[] this->intArray;
+	delete[] this->doubleArray;
 
 }
 
@@ -43,7 +46,7 @@ void DynamicArray::toString(){
 			printf("%i \n",this->intArray[i]);
 		}
 		else{
-			printf("%.2f \n",this->doubleArray[i]);
+			printf("%e \n",this->doubleArray[i]);
 		}
 	}
 

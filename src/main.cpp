@@ -24,6 +24,7 @@ int main()
 	int* test = new int[size];
 	for(int i = 0; i<size;i++){
 		test[i] = std::rand() % 101;
+		std::cout<<test[i] << '\n';
 	}
 	// Q1.3.b
 	DynamicArray dynArray(size);
@@ -36,10 +37,12 @@ int main()
 	dynArray.toString();
 
 	std::cout << "Testing:" <<std::endl;
+	int position = size - 1;
 
 	for(int i = 0 ; i<size;i++){
 		int arrP = size - 1;
-		cout << "Position " << (i+1) <<" Element should be: " << test[i] << " | TEST STATUS: " << isEqual(test[i], dynArray[size - i - 1]) << std::endl;
+		cout << "Position " << (position) <<" Element should be: " << test[i] << " | TEST STATUS: " << isEqual(test[i], dynArray[size - i - 1]) << std::endl;
+		position = position - 1 ;
 	}
 
 	// Q1.3.c
@@ -59,9 +62,12 @@ int main()
 	doubleArray.toString();
 //
 	std::cout << "Testing:" <<std::endl;
+	 position = size - 1;
 	for(int i = 0 ; i<size;i++){
 		int arrP = size - 1;
-		cout << "Position " << (i+1) <<" Element should be: " << doubleTest[i] << " | TEST STATUS: " << isEqual(doubleTest[i], doubleArray[size - i - 1]) << std::endl;
+		cout << "Position " << (position) <<" Element should be: " << doubleTest[i] << " | TEST STATUS: " << isEqual(doubleTest[i], doubleArray[size - i - 1]) << std::endl;
+		position = position - 1 ;
+
 	}
 	std::cout << "END";
 }
